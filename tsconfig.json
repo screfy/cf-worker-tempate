@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
     "moduleResolution": "Node",
-    "target": "ES2021",
+    "target": "ES2019",
     "module": "CommonJS",
     "outDir": "dist",
-    "lib": ["ES2021"],
+    "lib": ["ES2019"],
     "types": ["@cloudflare/workers-types"],
     "noImplicitAny": true,
     "alwaysStrict": true,

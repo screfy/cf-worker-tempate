@@ -19,7 +19,7 @@ module.exports = {
         exclude: /node_modules/,
         options: {
           loader: 'ts',
-          target: 'ES2021',
+          target: 'ES2019',
         },
       },
     ],
@@ -29,7 +29,7 @@ module.exports = {
   optimization: {
     minimizer: [
       new ESBuildMinifyPlugin({
-        target: 'ES2021',
+        target: 'ES2019',
       }),
     ],
   },
