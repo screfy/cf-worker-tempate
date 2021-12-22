@@ -2,8 +2,10 @@
   "name": "cf-worker-template",
   "version": "0.1.0",
   "author": "screfy <screfy@pm.me> (https://screfy.com)",
+  "main": "./src/index.ts",
   "private": true,
   "scripts": {
+    "dev": "miniflare -w",
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit"
   },
