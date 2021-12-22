@@ -1,6 +1,7 @@
 {
   "name": "cf-worker-template",
   "description": "Starter template for a Cloudflare Worker.",
+  "license": "MIT",
   "version": "0.1.0",
   "author": "screfy <screfy@pm.me> (https://screfy.com)",
   "main": "./src/index.ts",
