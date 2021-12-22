@@ -1,0 +1,15 @@
+{
+  "name": "cf-worker-template",
+  "version": "0.1.0",
+  "author": "screfy <screfy@pm.me> (https://screfy.com)",
+  "private": true,
+  "scripts": {
+    "format": "prettier --write .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "prettier": "^2.5.1",
+    "typescript": "^4.5.4"
+  }
+}
