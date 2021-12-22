@@ -1,6 +1,7 @@
 const { join } = require('path')
 
 const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin')
+const { ESBuildMinifyPlugin } = require('esbuild-loader')
 
 module.exports = {
   output: {
@@ -25,4 +26,11 @@ module.exports = {
   },
   // Add typechecking for TypeScript:
   plugins: [new ForkTsCheckerPlugin()],
+  optimization: {
+    minimizer: [
+      new ESBuildMinifyPlugin({
+        target: 'ES2021',
+      }),
+    ],
+  },
 }
