@@ -9,6 +9,9 @@
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit"
   },
+  "dependencies": {
+    "route-parser": "^0.0.5"
+  },
   "devDependencies": {
     "@cloudflare/workers-types": "^3.3.0",
     "esbuild-loader": "^2.18.0",
