@@ -1,0 +1,13 @@
+# https://developers.cloudflare.com/workers/cli-wrangler/configuration
+
+name = 'cf-worker-template'
+type = 'webpack'
+
+account_id = '14524f06f5fff6e2ddca8fc2adc0f880'
+
+webpack_config = 'webpack.config.js'
+
+# This field specifies that the Worker will be deployed to a *.workers.dev domain:
+workers_dev = true
+
+compatibility_date = '2021-12-22'
