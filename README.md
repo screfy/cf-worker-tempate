@@ -1,6 +1,6 @@
 # Cloudflare Worker Template
 
-A Cloudflare Worker template that uses TypeScript and a route parser.
+A Cloudflare Worker template that uses TypeScript, and a route parser to give you a level of route control that a more traditional API library would provide.
 
 ## Setup
 
