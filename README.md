@@ -40,9 +40,9 @@ You must register your new route in the [`routes.ts`](src/routes.ts) file.
 
 ```ts
 interface RouteDefinition {
-  path: Route
-  method: HttpMethod | HttpMethod[]
-  handler(req: HttpRequest, res: HttpResponse): Response | Promise<Response>
+  path: Route;
+  method: HttpMethod | HttpMethod[];
+  handler(req: HttpRequest, res: HttpResponse): Response | Promise<Response>;
 }
 ```
 
@@ -50,13 +50,13 @@ interface RouteDefinition {
 
 ```ts
 interface HttpRequest {
-  method: HttpMethod
-  url: URL
-  params: Params
-  query: URLSearchParams
-  headers: Headers
-  cf?: IncomingRequestCfProperties
-  body: unknown
+  method: HttpMethod;
+  url: URL;
+  params: Params;
+  query: URLSearchParams;
+  headers: Headers;
+  cf?: IncomingRequestCfProperties;
+  body: unknown;
 }
 ```
 
@@ -64,12 +64,12 @@ interface HttpRequest {
 
 ```ts
 interface HttpResponse {
-  statusCode: number
-  headers: Headers
-  status(code: number): HttpResponse
-  header(name: string, value: string): HttpResponse
-  redirect(url: string, status?: number): Response
-  send(body: string | object): Response
+  statusCode: number;
+  headers: Headers;
+  status(code: number): HttpResponse;
+  header(name: string, value: string): HttpResponse;
+  redirect(url: string, status?: number): Response;
+  send(body: string | object): Response;
 }
 ```
 

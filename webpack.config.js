@@ -1,7 +1,7 @@
-const { join } = require('path')
+const { join } = require('path');
 
-const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin')
-const { ESBuildMinifyPlugin } = require('esbuild-loader')
+const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
+const { ESBuildMinifyPlugin } = require('esbuild-loader');
 
 module.exports = {
   output: {
@@ -33,4 +33,4 @@ module.exports = {
       }),
     ],
   },
-}
+};
