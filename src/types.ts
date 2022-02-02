@@ -1,6 +1,13 @@
 import Route from 'route-parser';
 
-export type HttpMethod = 'GET' | 'HEAD' | 'POST' | 'PUT' | 'DELETE' | 'OPTIONS' | 'PATCH';
+export type HttpMethod =
+  | 'GET'
+  | 'HEAD'
+  | 'POST'
+  | 'PUT'
+  | 'DELETE'
+  | 'OPTIONS'
+  | 'PATCH';
 export type Params = { [key: string]: string | undefined };
 
 export interface HttpRequest {
