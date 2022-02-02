@@ -8,6 +8,7 @@
   "private": true,
   "scripts": {
     "dev": "miniflare -w",
+    "deploy": "wrangler publish",
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit"
   },

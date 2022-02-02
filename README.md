@@ -34,6 +34,14 @@ A Cloudflare Worker template that uses TypeScript, and a route parser to give yo
 
 You need to fill out [`wrangler.toml`](wrangler.toml) with your details (`account_id`). Other options you can find [here][wrangler-configuration].
 
+### Deployment
+
+Simply run:
+
+```bash
+pnpm deploy
+```
+
 ### Routes
 
 You must register your new route in the [`routes.ts`](src/routes.ts) file.
