@@ -1,6 +1,6 @@
 {
   "name": "cf-worker-template",
-  "description": "A Cloudflare Worker template that uses TypeScript, and a route parser to give you a level of route control that a more traditional API library would provide.",
+  "description": "A Cloudflare Worker template that uses TypeScript and a custom route parser.",
   "license": "MIT",
   "version": "0.1.0",
   "author": "screfy <screfy@pm.me> (https://screfy.com)",
