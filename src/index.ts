@@ -43,7 +43,7 @@ addEventListener('fetch', (event) => {
         query,
         headers,
         body,
-        cf,
+        cf
       };
 
       const httpResponse: HttpResponse = {
@@ -76,11 +76,11 @@ addEventListener('fetch', (event) => {
 
           const response = new Response(body, {
             status: httpResponse.statusCode,
-            headers: httpResponse.headers,
+            headers: httpResponse.headers
           });
 
           return response;
-        },
+        }
       };
 
       // Handle request if the route was found or return 404:
