@@ -36,11 +36,7 @@ You need to fill out [`wrangler.toml`](wrangler.toml) with your details (`accoun
 
 ### Deployment
 
-Simply run:
-
-```bash
-pnpm deploy
-```
+This repository is using [Wrangler Action](.github/workflows/deploy.yml) for deployment. You'll need to configure Wrangler using [GitHub's encrypted secrets feature][encrypted-secrets] and add your [Cloudflare API token][api-token]. Action will deploy your application on pushes to the `main` or `master` branch.
 
 ### Routes
 
@@ -93,3 +89,5 @@ This project is licensed under the [MIT license](LICENSE).
 [miniflare]: https://miniflare.dev
 [workers]: https://workers.cloudflare.com
 [wrangler-configuration]: https://developers.cloudflare.com/workers/cli-wrangler/configuration
+[encrypted-secrets]: https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository
+[api-token]: https://developers.cloudflare.com/api/tokens/create
