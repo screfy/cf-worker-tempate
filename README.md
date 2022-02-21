@@ -10,7 +10,7 @@ A Cloudflare Worker template that uses TypeScript and a custom route parser to g
 - [Wrangler][wrangler]
 - Package Manager (this project is using [pnpm][pnpm])
 
-### Setting Up a Project
+### Setting up a project
 
 1. Click on [Use this template][template].
 2. [Clone][cloning-a-repo] your repository.
@@ -38,44 +38,23 @@ You need to fill out [`wrangler.toml`](wrangler.toml) with your details (`accoun
 
 This repository is using [Wrangler Action](.github/workflows/deploy.yml) for deployment. You'll need to configure Wrangler using [GitHub's encrypted secrets feature][encrypted-secrets] and add your [Cloudflare API token][api-token]. Action will deploy your application on pushes to the `main` or `master` branch.
 
-### Routes
+Or you can run `pnpm deploy` from your terminal.
 
-You must register your new route in the [`routes.ts`](src/routes.ts) file.
+### Adding a new route
 
-```ts
-interface RouteDefinition {
-  path: Route;
-  method: HttpMethod | HttpMethod[];
-  handler(req: HttpRequest, res: HttpResponse): Response | Promise<Response>;
-}
-```
-
-### Request
+Create a new file in the [`routes`](src/routes) directory and add a new route(s), e.g.:
 
 ```ts
-interface HttpRequest {
-  method: HttpMethod;
-  url: URL;
-  params: Params;
-  query: URLSearchParams;
-  headers: Headers;
-  cf?: IncomingRequestCfProperties;
-  body: unknown;
-}
+router.addRoute({
+  path: new Route('/post'),
+  method: 'POST',
+  resolve: (req, res) => {
+    return res.send({ method: req.method, data: { hello: 'world' } });
+  }
+});
 ```
 
-### Response
-
-```ts
-interface HttpResponse {
-  statusCode: number;
-  headers: Headers;
-  status(code: number): HttpResponse;
-  header(name: string, value: string): HttpResponse;
-  redirect(url: string, status?: number): Response;
-  send(body: string | object): Response;
-}
-```
+Then import your new file into [`routes/index.ts`](src/routes/index.ts), and your route(s) will be automatically registered.
 
 ## License
 

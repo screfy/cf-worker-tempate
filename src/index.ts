@@ -1,6 +1,15 @@
-import NotFound from './handlers/NotFound';
-import routes from './routes';
-import { HttpMethod, HttpRequest, HttpResponse, Params } from './types';
+import router from './utils/Router';
+import { HttpMethod, Params } from './types';
+import HttpResponse from './utils/HttpResponse';
+import HttpRequest from './utils/HttpRequest';
+
+// Register all routes:
+import './routes';
+
+// This function will be called when the route will not be found:
+function notFound(req: HttpRequest, res: HttpResponse): Response {
+  return res.status(404).send({ message: 'route not found' });
+}
 
 addEventListener('fetch', (event) => {
   event.respondWith(
@@ -29,14 +38,14 @@ addEventListener('fetch', (event) => {
           : url.pathname;
 
       // Find a route that matches the requested path:
-      const route = routes.find(
+      const route = router.routes.find(
         (route) => route.path.match(path) && route.method.includes(method)
       );
 
       // Get a params:
       const params = route?.path.match(path) as Params;
 
-      const httpRequest: HttpRequest = {
+      const httpRequest = new HttpRequest(
         method,
         url,
         params,
@@ -44,50 +53,14 @@ addEventListener('fetch', (event) => {
         headers,
         body,
         cf
-      };
-
-      const httpResponse: HttpResponse = {
-        statusCode: 200,
-        headers: new Headers(),
-        status: (code) => {
-          httpResponse.statusCode = code;
-
-          return httpResponse;
-        },
-        header: (name, value) => {
-          httpResponse.headers.set(name, value);
-
-          return httpResponse;
-        },
-        redirect: (url, status = 302) => {
-          const response = Response.redirect(url, status);
-
-          return response;
-        },
-        send: (body) => {
-          if (typeof body === 'object') {
-            body = JSON.stringify(body, null, 2);
-
-            httpResponse.headers.set(
-              'content-type',
-              'application/json;charset=UTF-8'
-            );
-          }
-
-          const response = new Response(body, {
-            status: httpResponse.statusCode,
-            headers: httpResponse.headers
-          });
-
-          return response;
-        }
-      };
+      );
+      const httpResponse = new HttpResponse();
 
       // Handle request if the route was found or return 404:
       resolve(
         route
-          ? await route.handler(httpRequest, httpResponse)
-          : NotFound(httpRequest, httpResponse)
+          ? route.resolve(httpRequest, httpResponse)
+          : notFound(httpRequest, httpResponse)
       );
     })
   );
