@@ -10,4 +10,4 @@ webpack_config = 'webpack.config.js'
 # This field specifies that the Worker will be deployed to a *.workers.dev domain:
 workers_dev = true
 
-compatibility_date = '2021-12-22'
+compatibility_date = '2022-02-21'
