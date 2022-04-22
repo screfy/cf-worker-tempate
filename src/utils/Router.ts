@@ -1,17 +1,17 @@
 import { RouteDefinition } from '../types';
 
 class Router {
-  public readonly routes: RouteDefinition[];
+	public readonly routes: RouteDefinition[];
 
-  constructor() {
-    this.routes = [];
-  }
+	constructor() {
+		this.routes = [];
+	}
 
-  public addRoute(route: RouteDefinition): Router {
-    this.routes.push(route);
+	public addRoute(route: RouteDefinition): Router {
+		this.routes.push(route);
 
-    return this;
-  }
+		return this;
+	}
 }
 
 const router = new Router();

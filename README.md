@@ -46,11 +46,11 @@ Create a new file in the [`routes`](src/routes) directory and add a new route(s)
 
 ```ts
 router.addRoute({
-  path: new Route('/post'),
-  method: 'POST',
-  resolve: (req, res) => {
-    return res.send({ method: req.method, data: { hello: 'world' } });
-  }
+	path: new Route('/post'),
+	method: 'POST',
+	resolve: (req, res) => {
+		return res.send({ method: req.method, data: { hello: 'world' } });
+	}
 });
 ```
 
