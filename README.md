@@ -63,7 +63,7 @@ This project is licensed under the [MIT license](LICENSE).
 [node]: https://nodejs.org
 [wrangler]: https://developers.cloudflare.com/workers/cli-wrangler/install-update
 [pnpm]: https://pnpm.io
-[template]: https://github.com/screfy/cf-worker-tempate/generate
+[template]: https://github.com/screfy/cf-worker-template/generate
 [cloning-a-repo]: https://help.github.com/en/articles/cloning-a-repository
 [miniflare]: https://miniflare.dev
 [workers]: https://workers.cloudflare.com
